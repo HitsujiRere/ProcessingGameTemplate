@@ -10,14 +10,14 @@ class SceneManager<State> {
   boolean needSetup = true;
 
   //追加
-  SceneManager add(State state, IScene scene) {
+  SceneManager<State> add(State state, IScene scene) {
     scenes.put(state, scene);
 
     return this;
   }
 
   // シーンを変更
-  SceneManager set(State state) {
+  SceneManager<State> set(State state) {
     currentScene = scenes.get(state);
     if (currentScene == null) {
       throw new RuntimeException("State is unregistered : " + state);
@@ -30,12 +30,12 @@ class SceneManager<State> {
 
   // 更新
   void draw() {
-    if (needSetup) {
-      currentScene.setup();
-      needSetup = false;
-    }
-
     if (currentScene != null) {
+      if (needSetup) {
+        currentScene.setup();
+        needSetup = false;
+      }
+
       currentScene.draw();
     }
   }

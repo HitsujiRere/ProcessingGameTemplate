@@ -13,7 +13,7 @@ int deltaTime = 0;
 // 前フレームからの経過秒
 float deltaTimeSec = 0.0;
 
-// draw開始時の更新
+// draw()開始時の更新をする
 void draw_begin() {
   mouseClicked = mousePressed && !pmousePressed;
 
@@ -22,7 +22,7 @@ void draw_begin() {
   deltaTimeSec = deltaTime / 1000.0;
 }
 
-// draw終了時の更新
+// draw()終了時の更新をする
 void draw_end() {
   pmousePressed = mousePressed;
 
