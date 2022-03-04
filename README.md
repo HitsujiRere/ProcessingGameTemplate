@@ -62,6 +62,10 @@ keyPressed()にてkeyPressedUpdate()，keyReleased()にてkeyReleasedUpdate()を
 
   `keyReleased()`で呼ぶ必要がある
 
+### Key Codes
+
+キーコード定数
+
 ### PImageAsset
 
 PImageのアセット管理を行う
