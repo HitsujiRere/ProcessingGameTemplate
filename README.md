@@ -28,11 +28,11 @@ Processing用のゲーム作成テンプレート
 
 シーンのインターフェース
 
-- void setup();
+- void setup()
 
   シーンの変更時に呼ばれる
 
-- void draw();
+- void draw()
 
   シーン毎フレーム呼ばれる
 
