@@ -3,7 +3,7 @@ class PImageAsset {
   // シーン
   HashMap<String, PImage> images = new HashMap();
 
-  //PImageを追加
+  // PImageを追加
   PImageAsset register(String name, PImage image) {
     if (name == null || image == null) {
       throw new NullPointerException();
@@ -14,7 +14,7 @@ class PImageAsset {
     return this;
   }
 
-  //PImageをパスから追加
+  // PImageをパスから追加
   PImageAsset register(String name, String path) {
     if (name == null || path == null) {
       throw new NullPointerException();

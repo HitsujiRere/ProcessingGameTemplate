@@ -24,12 +24,27 @@ Processing用のゲーム作成テンプレート
 
   現在のシーンを実行する
 
+### IScene
+
+シーンのインターフェース
+
+- void setup();
+
+  シーンの変更時に呼ばれる
+
+- void draw();
+
+  シーン毎フレーム呼ばれる
 
 ### KeyManager
 
 入力されたキーの管理を行う
 
 keyPressed()にてkeyPressedUpdate()，keyReleased()にてkeyReleasedUpdate()を呼ぶ必要がある
+
+- int time(int code)
+
+  キーを押している時間
 
 - boolean pressed(int code)
 
@@ -47,17 +62,21 @@ keyPressed()にてkeyPressedUpdate()，keyReleased()にてkeyReleasedUpdate()を
 
   `keyReleased()`で呼ぶ必要がある
 
-### IScene
+### PImageAsset
 
-シーンのインターフェース
+PImageのアセット管理を行う
 
-- void setup();
+- register(String name, PImage image)
 
-  シーンの変更時に呼ばれる
+  識別子を`name`としてPImage`image`を追加する
 
-- void draw();
+- register(String name, String path)
 
-  シーン毎フレーム呼ばれる
+  識別子を`name`として，ファイル`path`のPImage`image`を追加する
+
+- get(String name)
+  
+  識別子`name`のPImageを返す
 
 ### app
 
