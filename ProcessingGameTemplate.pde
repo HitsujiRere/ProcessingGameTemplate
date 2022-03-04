@@ -1,8 +1,11 @@
 // シーンマネージャ
 SceneManager<Integer> sceneManager = new SceneManager();
 
-// キーマネージャー
+// キーマネージャ
 KeyManager keyManager = new KeyManager();
+
+// PImageアセット
+PImageAsset pimageAsset = new PImageAsset();
 
 // ハイスコア
 int highScore = 0;
@@ -13,6 +16,11 @@ void setup() {
   // ハイスコアを取得
   JSONObject json = loadJSONObject("savedata");
   highScore = json.getInt("highScore");
+
+  // 画像の登録
+  pimageAsset
+    .register("rice", "rice.png")
+    .register("bear", "bear.png");
 
   // シーンの登録・設定
   sceneManager
@@ -45,9 +53,11 @@ void dispose() {
 }
 
 void keyPressed() {
+  // キーマネージャの更新
   keyManager.keyPressedUpdate();
 }
 
 void keyReleased() {
+  // キーマネージャの更新
   keyManager.keyReleasedUpdate();
 }

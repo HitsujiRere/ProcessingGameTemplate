@@ -15,13 +15,22 @@ class KeyManager {
     keyMap.remove(keyCode);
   }
 
+  // キーを押している時間
+  int time(int code) {
+    if (pressed(code)) {
+      return time - keyMap.get(code);
+    } else {
+      return 0;
+    }
+  }
+
   // キーが押されているか
   boolean pressed(int code) {
     return keyMap.containsKey(code);
   }
-  
+
   // キーが押された瞬間か
   boolean clicked(int code) {
-    return pressed(code) && (keyMap.get(code) >= ptime);
+    return pressed(code) && (time(code) <= deltaTime);
   }
 }

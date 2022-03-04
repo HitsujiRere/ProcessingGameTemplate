@@ -13,8 +13,8 @@ class GameScene implements IScene {
   int score;
 
   GameScene() {
-    riceImage = loadImage("rice.png");
-    bearImage = loadImage("bear.png");
+    riceImage = pimageAsset.get("rice");
+    bearImage = pimageAsset.get("bear");
   }
 
   void setup() {
