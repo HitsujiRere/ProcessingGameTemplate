@@ -123,7 +123,7 @@ PImageのアセット管理を行う
 
   `draw()`終了時の更新をする
 
-### GameObjects
+### GameObject
 
 - PVector center()
 
