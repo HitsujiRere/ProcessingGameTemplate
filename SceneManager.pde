@@ -13,7 +13,7 @@ class SceneManager<State> {
     if (state == null || scene == null) {
       throw new NullPointerException();
     }
-    
+
     scenes.put(state, scene);
 
     if (currentScene == null && nextScene == null) {
@@ -40,6 +40,10 @@ class SceneManager<State> {
   // シーンの実行
   void draw() {
     if (nextScene != null) {
+      if (currentScene != null) {
+        currentScene.dispose();
+      }
+
       currentScene = nextScene;
       nextScene = null;
 

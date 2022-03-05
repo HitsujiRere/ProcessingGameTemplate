@@ -30,11 +30,15 @@ Processing用のゲーム作成テンプレート
 
 - void setup()
 
-  シーンの変更時に呼ばれる
+  シーンの開始時に呼ばれる
 
 - void draw()
 
-  シーン毎フレーム呼ばれる
+  シーンの毎フレームに呼ばれる
+
+- void setup()
+
+  シーンの修了時に呼ばれる
 
 ### KeyManager
 
@@ -118,3 +122,25 @@ PImageのアセット管理を行う
 - void draw_end()
 
   `draw()`終了時の更新をする
+
+### GameObjects
+
+- PVector center()
+
+  中心座標を取得する
+
+- drawFrame()
+
+  フレームを描画する
+
+- boolean intersects(GameObject obj)
+
+  `this`と`obj`が交差しているか
+
+- boolean contains(GameObject obj)
+
+  `this`が`obj`を内側に含んでいるか
+
+- boolean contains(PVector other)
+
+  `this`が`other`を内側に含んでいるか

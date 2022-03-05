@@ -21,4 +21,7 @@ class TitleScene implements IScene {
       sceneManager.set(SCENE_GAME);
     }
   }
+
+  void dispose() {
+  }
 }

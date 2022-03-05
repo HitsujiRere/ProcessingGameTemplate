@@ -48,3 +48,16 @@ final int KEY_W = 87;
 final int KEY_X = 88;
 final int KEY_Y = 89;
 final int KEY_Z = 90;
+
+final int KEY_F1 = 112;
+final int KEY_F2 = 113;
+final int KEY_F3 = 114;
+final int KEY_F4 = 115;
+final int KEY_F5 = 116;
+final int KEY_F6 = 117;
+final int KEY_F7 = 118;
+final int KEY_F8 = 119;
+final int KEY_F9 = 120;
+final int KEY_F10 = 121;
+final int KEY_F11 = 122;
+final int KEY_F12 = 123;

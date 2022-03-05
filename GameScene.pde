@@ -69,4 +69,7 @@ class GameScene implements IScene {
     // クマを表示
     image(bearImage, bearX, bearY, 128, 128);
   }
+
+  void dispose() {
+  }
 }

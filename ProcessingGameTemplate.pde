@@ -45,6 +45,7 @@ void draw() {
   draw_end();
 }
 
+// プログラム終了時
 void dispose() {
   // ハイスコアを保存
   JSONObject json = new JSONObject();
