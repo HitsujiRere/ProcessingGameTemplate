@@ -1,13 +1,13 @@
 class GameScene implements IScene {
-  // ご飯画像
+  // ご飯の画像
   PImage riceImage;
-  // ご飯位置
-  float riceX, riceY;
+  // ご飯のゲームオブジェクト
+  GameObject riceObj;
 
-  // クマ画像
+  // クマの画像
   PImage bearImage;
-  // クマ位置
-  float bearX, bearY;
+  // クマのゲームオブジェクト
+  GameObject bearObj;
 
   // 食べた回数
   int score;
@@ -18,11 +18,9 @@ class GameScene implements IScene {
   }
 
   void setup() {
-    riceX = width / 2;
-    riceY = 0;
+    riceObj = new GameObject(width / 2, 0, 96, 96);
 
-    bearX = mouseX;
-    bearY = mouseY;
+    bearObj = new GameObject(mouseX, height - 128, 128, 128);
 
     score = 0;
   }
@@ -30,10 +28,10 @@ class GameScene implements IScene {
   void draw() {
     // ご飯が落ちる
     // deltaTimeSecを掛けることでフレームレート非依存
-    riceY += (300 + score * 20) * deltaTimeSec;
+    riceObj.pos.y += (300 + score * 20) * deltaTimeSec;
 
     // ご飯が床に落ちるとゲームオーバー
-    if (riceY >= height) {
+    if (riceObj.pos.y >= height) {
       sceneManager.set(SCENE_TITLE);
 
       // ハイスコアを更新する
@@ -43,14 +41,11 @@ class GameScene implements IScene {
     }
 
     // クマが移動
-    bearX = mouseX;
-    bearY = height * 3 / 4;
+    bearObj.pos.x = mouseX;
 
     // ご飯を食べる
-    if (bearX - 64 <= riceX && riceX <= bearX + 64 &&
-      bearY - 64 <= riceY && riceY <= bearY + 64) {
-      riceX = random(width);
-      riceY = 0;
+    if (bearObj.intersects(riceObj)) {
+      riceObj.pos.set(random(width), 0);
       score++;
     }
 
@@ -64,10 +59,10 @@ class GameScene implements IScene {
 
     // ご飯を表示
     imageMode(CENTER);
-    image(riceImage, riceX, riceY, 96, 96);
+    image(riceImage, riceObj);
 
     // クマを表示
-    image(bearImage, bearX, bearY, 128, 128);
+    image(bearImage, bearObj);
   }
 
   void dispose() {

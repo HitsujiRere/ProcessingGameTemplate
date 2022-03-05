@@ -22,11 +22,6 @@ class GameObject {
   }
 
   // フレームを描画する
-  void drawFrame(color frameColor) {
-    noFill();
-    stroke(frameColor);
-    rect(pos.x, pos.y, size.x, size.y);
-  }
 
   // thisとobjが交差しているか
   boolean intersects(GameObject obj) {
@@ -45,4 +40,12 @@ class GameObject {
     return pos.x <= other.x && other.x <= pos.x + size.x
       && pos.y <= other.y && other.y <= pos.y + size.y;
   }
+}
+
+void rect(GameObject obj) {
+  rect(obj.pos.x, obj.pos.y, obj.size.x, obj.size.y);
+}
+
+void image(PImage img, GameObject obj) {
+  image(img, obj.pos.x, obj.pos.y, obj.size.x, obj.size.y);
 }

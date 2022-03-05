@@ -83,7 +83,7 @@ PImageのアセット管理を行う
   識別子を`name`として，ファイル`path`のPImage`image`を追加する
 
 - get(String name)
-  
+
   識別子`name`のPImageを返す
 
 ### app
@@ -128,10 +128,6 @@ PImageのアセット管理を行う
 - PVector center()
 
   中心座標を取得する
-
-- drawFrame()
-
-  フレームを描画する
 
 - boolean intersects(GameObject obj)
 
