@@ -13,9 +13,14 @@ int highScore = 0;
 void setup() {
   size(960, 640);
 
-  // ハイスコアを取得
-  JSONObject json = loadJSONObject("savedata");
-  highScore = json.getInt("highScore");
+  try {
+    // ハイスコアを取得
+    JSONObject json = loadJSONObject("savedata");
+    highScore = json.getInt("highScore");
+  }
+  catch(Exception e) {
+    highScore = 0;
+  }
 
   // 画像の登録
   pimageAsset
